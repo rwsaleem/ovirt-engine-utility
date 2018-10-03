@@ -1,5 +1,7 @@
 # ovirt-engine-utility
 
+Note: This script will not work on the local system if the ovirt-engine package is not installed.
+
 Description:
 1. Simple python script to take an ovirt-engine backup and store it in remote location. Using this script you can restore the backup from remote location if something goes wrong with the ovirt-engine.
 2. It ask the user wheather he wants to take a backup or restore the engine from the taken backup.
