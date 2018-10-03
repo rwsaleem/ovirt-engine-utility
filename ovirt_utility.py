@@ -6,7 +6,7 @@ it will restore the engine from the backup which we have taken on remote drive.
 """
 def backup():
     try:
-        source = input("Enter the file name where you want to sore the engine-backup = ")
+        source = input("Enter the file name where you want to store the engine-backup = ")
         destination = input("Enter the remote IP Address (e.g.root@<drive_ip_addr>:/<folder-name>) where you want to store the backup = ")
         #engine-backup to local system.
         backup = 'sudo engine-backup --mode=backup --file=' + source + ' --log=' + source +  '.log'
