@@ -3,6 +3,32 @@ import subprocess
 """
 Usage: This script is to take a ovirt-engine backup to remote drive using the ovirt-engine and rsync utility and also if the engine gets crashed 
 it will restore the engine from the backup which we have taken on remote drive.
+
+Note - You need to have sudo access to run the engine-backup command, if you are not having the sudo access then the script will 
+       get executed with error or the script will not get executed.
+
+Used and variables:
+
+    1. source - Enter the file name in which you want to dump the ovirt-engine backup.
+    
+    2. destination - Enter the destination name where you want to copy/store your backup. I have write this code considering
+       my NAS drive. 
+    
+    3. backup - In this variable the result of ovirt-engine will get store and once this command get executed succesfully 
+       it will generate the backup file in your given path and it will print the line "Backup is completed, now we are 
+       proceeding with transeferring the backups to remote hard drive".
+
+    4. copy - In this variable the result of the rsync command will get store and once this command get executed successfully
+       it will copy/transfer the backup to given remote destination.
+       
+    5. copy_status - In this variable the exit code of the rysnc command will get store. If the exit code 'is equal' to 0 then 
+       it will delete the backup file from the local system and then it will notify you with the message that the file is removed
+       as the backup accomplishes successfully.
+  
+
+
+
+
 """
 def backup():
     try:
